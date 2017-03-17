@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><title>WKA2017</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="yes" name="apple-touch-fullscreen"><meta content="telephone=no,email=no" name="format-detection"><meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><style>html, body{
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>王者归来</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="yes" name="apple-touch-fullscreen"><meta content="telephone=no,email=no" name="format-detection"><meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><link rel="stylesheet" type="text/css" href="./lib/animate.min.css"><style>html, body{
 
         margin: 0px;
         height: 100%;
@@ -31,12 +31,6 @@
         background-repeat: no-repeat;
 
     }
-
-    .trans {
-
-        transition: all 1s linear;
-
-    }
     #main {
 
         position: absolute;
@@ -48,107 +42,93 @@
 
     .scene {
         height: 100%;
-        position: relative;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    .st {
-
         position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        height: 100%;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        opacity: 0;
-        transition: all 1s linear;
-
-    }
-
-    #s1t1{
-
-        opacity: 1;
-
-    }
-
-    #s1t2 {
-
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        opacity: 0;
         display: none;
     }
 
-    #s3t1 {
+    .s {
 
         position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        /*background-size: cover;*/
-        /*background-position: center;*/
-        /*background-repeat: no-repeat;*/
-        /*opacity: 0;*/
-        /*transition: all 1s ease-in;*/
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
 
     }
-
-    #s3t2 {
+    .st {
 
         position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        /*background-size: cover%;*/
-        /*background-position: center;*/
-        /*background-repeat: no-repeat;*/
-        /*opacity: 0;*/
-        /*transition: all 1s linear;*/
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: none;
 
     }
 
-    #st31{
+    #scene0 {
+        display: block;
+    }
+    #s0t1 {
+        display: block;
+    }
 
+    #ercode{
         position: absolute;
-        top: 50%;
         left: 50%;
-        height: 400%;
-        display:none;
+        top: 63.2%;
+        height: 95px;
+        -webkit-transform:translate(-50%,-50%);
         transform:translate(-50%,-50%);
 
-    }
+    }</style><div id="wx_pic" style="margin:0 auto;display:none"><img src="res/icon.jpg"></div></head><script>document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+    window.shareData = {
+        "timeLineLink": "http://60.205.219.180/Archive/index.html",
+        "sendFriendLink": "http://60.205.219.180/Archive/index.html",
+        "weiboLink": "http://60.205.219.180/Archive/index.html",
+        "tTitle": "王者归来",
+        "tContent": "2017世界超级散打王争霸赛签约仪式新闻发布会邀请函",
+        "fTitle": "王者归来",
+        "fContent": "2017世界超级散打王争霸赛签约仪式新闻发布会邀请函",
+        "wContent": "2017世界超级散打王争霸赛签约仪式新闻发布会邀请函"
+        };
+        // 发送给好友
+        WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+            WeixinJSBridge.invoke('sendAppMessage', {
+                "img_url": "res/icon.jpg",
+                "img_width": "300",
+                "img_height": "300",
+                "link": window.shareData.sendFriendLink,
+                "desc": window.shareData.fContent,
+                "title": window.shareData.fTitle
+            }, function (res) {
+                _report('send_msg', res.err_msg);
+            })
+        });
+        // 分享到朋友圈
+        WeixinJSBridge.on('menu:share:timeline', function (argv) {
+            WeixinJSBridge.invoke('shareTimeline', {
+                "img_url": "res/icon.jpg",
+                "img_width": "300",
+                "img_height": "300",
+                "link": window.shareData.timeLineLink,
+                "desc": window.shareData.tContent,
+                "title": window.shareData.tTitle
+            }, function (res) {
+                _report('timeline', res.err_msg);
+            });
+        });
 
-    #st32{
-
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        height: 0;
-        transform:translate(-50%,-50%);
-        transition: all 0.5s linear;
-
-    }
-
-    .left {
-
-        left: -100%;
-
-    }
-    .right {
-
-        left: 100%;
-
-    }
-
-    .up {
-        position: absolute;
-        width: 30px;
-        height: 10px;
-        left: 50%;
-        margin-left: -15px;
-        bottom: 10px;
-    }</style><div id="wx_pic" style="margin:0 auto;display:none"><img src="res/icon.jpeg"></div></head><body><div id="main" class="trans"><div id="scene1" class="scene trans"><div id="s1t1" class="st"></div><div id="s1t2" class="st"></div></div><div id="scene2" class="scene trans"><div id="s2t1" class="st"></div><div id="s2t4" class="st right"></div><div id="s2t2" class="st"></div><div id="s2t5" class="st left"></div><div id="s2t3" class="st"></div><div id="s2t6" class="st"></div></div><div id="scene3" class="scene trans"><div id="s3t1" class=""><img id="st31" src="res/s3t1.png"></div><div id="s3t2" class=""><img id="st32" src="res/s3t2.png"></div><div id="s3t3" class="st"></div><div id="s3t4" class="st"></div><div id="s3t5" class="st"></div></div><div id="scene4" class="scene trans"><div id="s4t1" class="st"></div><div id="s4t2" class="st"></div></div><div id="scene5" class="scene trans"><div id="s5t1" class="st"></div><div id="s5t2" class="st"></div><div id="s5t3" class="st"></div></div><div id="scene6" class="scene trans"><div id="s6t1" class="st"></div><div id="s6t2" class="st"></div><div id="s6t3" class="st"></div><div id="s6t4" class="st"></div></div></div><script src="lib/jquery-3.1.1.min.js"></script><script src="js/index.js"></script></body></html>
+    }, false)</script><body><div id="main" class=""><div id="scene0" class="scene animated bounceInUp"><div id="s0t1" class="st"></div><div id="s0t2" class="st"></div></div><div id="scene1" class="scene animated bounceInUp"><div id="s1t1" class="s"></div><div id="s1t2" class="st animated bounceInDown"></div><div id="s1t3" class="st animated bounceIn"></div></div><div id="scene2" class="scene animated bounceInUp"><div id="s2t1" class="s"></div><div id="s2t2" class="st animated bounceInDown"></div><div id="s2t3" class="st animated bounceIn"></div><div id="s2t4" class="st animated flipInX"></div><div id="s2t5" class="st animated bounceInUp"></div></div><div id="scene3" class="scene animated bounceInUp"><div id="s3t1" class="s"></div><div id="s3t2" class="st animated bounceInDown"></div><div id="s3t3" class="st animated bounceIn"></div><div id="s3t4" class="st animated flipInX"></div></div><div id="scene4" class="scene animated bounceInUp"><div id="s4t1" class="s"></div><div id="s4t2" class="st animated bounceInDown"></div><div id="s4t3" class="st animated flipInX"></div></div><div id="scene5" class="scene animated bounceInUp"><div id="s5t1" class="s"></div><div id="s5t2" class="st animated bounceInDown"></div><div id="s5t3" class="st animated bounceIn"></div><div id="s5t4" class="st animated flipInX"></div></div><div id="scene6" class="scene animated bounceInUp"><div id="s6t1" class="s"></div><div id="s6t2" class="st animated bounceInDown"></div><div id="s6t3" class="st animated bounceIn"></div><div id="s6t4" class="st animated flipInX"><img id="ercode" src="res/code.jpg"></div><!-- <div id='s6t5' class="st animated flipInX"></div> --></div></div><audio id="bg-music" src="res/bgm.m4a" loop preload></audio><script src="lib/jquery-3.1.1.min.js"></script><script src="js/index.js"></script></body></html>

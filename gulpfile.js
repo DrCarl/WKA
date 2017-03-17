@@ -13,6 +13,8 @@ gulp.task('clean', function(){
 
 gulp.task('package', function() {
 
+    gulp.src(['src/res/**.wav', 'src/res/**.mp3', 'src/res/**.m4a'])
+    .pipe(gulp.dest('dist/res/'));
     gulp.src(['src/res/**.jpg', 'src/res/**.png', 'src/res/**.gif'])
     .pipe($.imagemin({
         progressive: true,
@@ -22,6 +24,9 @@ gulp.task('package', function() {
 
     gulp.src(['src/*.js', 'src/**/*.js'])
     .pipe($.uglify()).pipe(gulp.dest('dist'));
+
+    gulp.src(['src/**/*.css'])
+    .pipe(gulp.dest('dist'));
 
     gulp.src(['src/*.html', 'src/**/*.html'])
     .pipe($.htmlmin({collapseWhitespace: true}))
