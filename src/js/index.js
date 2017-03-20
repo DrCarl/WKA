@@ -1,10 +1,13 @@
+var musicOn = false
 document.addEventListener('DOMContentLoaded', function () {
 
     function audioAutoPlay() {
         var audio = document.getElementById('bg-music');
         audio.play();
+        musicOn = true;
         document.addEventListener("WeixinJSBridgeReady", function () {
             audio.play();
+            musicOn = true;
         }, false);
     }
     audioAutoPlay();
@@ -13,13 +16,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
 $(function(){
 
+    $('#audio_btn').on('click', function(){
+
+        if(musicOn){
+
+            $('#bg-music')[0].pause();
+            $('#audio_btn').removeClass('rotate');
+
+        }else{
+
+            $('#bg-music')[0].play();
+            $('#audio_btn').addClass('rotate');
+
+        }
+        musicOn = !musicOn;
+    })
+
     var INTERVAL = 1000;
 
     var CW = document.body.clientWidth;
     var CH = document.body.clientHeight;
 
     $('#ercode').css({
-        height: 95 * CH /568 + 'px'
+        height: 95 * CH / 568 + 'px',
+        margin: - 95 * CH / 568 /2 + 'px'
     })
 
     if(CH > CW){
@@ -163,7 +183,7 @@ $(function(){
             res: 'res/s4t2.png'
         },{
             id: '#scene5',
-            res: 'res/wka-bg.jpg'
+            res: 'res/wka-bg1.jpg'
         },{
             id: '#s5t1',
             res: 'res/s5t10.png'
@@ -178,7 +198,7 @@ $(function(){
             res: 'res/s5t3.png'
         },{
             id: '#scene6',
-            res: 'res/wka-bg.jpg'
+            res: 'res/wka-bg2.jpg'
         },{
             id: '#s6t1',
             res: 'res/s6t10.png'
@@ -427,6 +447,7 @@ $(function(){
         setTimeout(function(){
             $('#s6t4').show();
             // $('#s6t5').show();
+            $('#ercode').show();
 
             var sa5 = new ScrollAction($('#s6t4'), function(){
             }, function(){

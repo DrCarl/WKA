@@ -105,7 +105,29 @@
         height: 95px;
         -webkit-transform:translate(-50%,-50%);
         transform:translate(-50%,-50%);
+        display: none;
 
+    }
+    #audio_btn{
+        position: fixed;
+        left: 30px;
+        top: 30px;
+        width: 30px;
+        height: 30px;
+        background-image: url(./res/note.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .rotate {
+        -webkit-animation: rotating 1.2s linear infinite;
+        -moz-animation: rotating 1.2s linear infinite;
+        -o-animation: rotating 1.2s linear infinite;
+        animation: rotating 1.2s linear infinite;
+    }
+    @-webkit-keyframes rotating {
+        100% { -webkit-transform:rotateZ(0deg); }
+        50% { -webkit-transform:rotateZ(-180deg); }
+        0% { -webkit-transform:rotateZ(-360deg); }
     }
     </style>
     <div id='wx_pic' style='margin:0 auto;display:none;'>
@@ -194,11 +216,12 @@
         <div id='s6t2' class="st animated bounceInDown"></div>
         <div id='s6t3' class="st animated bounceIn"></div>
         <div id='s6t4' class="st animated flipInX">
-            <img id='ercode' src="res/code.jpg">
         </div>
+        <img id='ercode' class="animated flipInX" src="res/code.jpg">
         <!-- <div id='s6t5' class="st animated flipInX"></div> -->
     </div>
 </div>
+<div id="audio_btn" class="off rotate"></div>
 <audio id="bg-music" src='res/bgm.m4a' loop preload></audio>
 <script src="lib/jquery-3.1.1.min.js"></script>
 <script src="js/index.js"></script>

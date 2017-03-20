@@ -92,7 +92,29 @@
         height: 95px;
         -webkit-transform:translate(-50%,-50%);
         transform:translate(-50%,-50%);
+        display: none;
 
+    }
+    #audio_btn{
+        position: fixed;
+        left: 30px;
+        top: 30px;
+        width: 30px;
+        height: 30px;
+        background-image: url(./res/note.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .rotate {
+        -webkit-animation: rotating 1.2s linear infinite;
+        -moz-animation: rotating 1.2s linear infinite;
+        -o-animation: rotating 1.2s linear infinite;
+        animation: rotating 1.2s linear infinite;
+    }
+    @-webkit-keyframes rotating {
+        100% { -webkit-transform:rotateZ(0deg); }
+        50% { -webkit-transform:rotateZ(-180deg); }
+        0% { -webkit-transform:rotateZ(-360deg); }
     }</style><div id="wx_pic" style="margin:0 auto;display:none"><img src="res/icon.jpg"></div></head><script>document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
     window.shareData = {
         "timeLineLink": "http://60.205.219.180/Archive/index.html",
@@ -131,4 +153,4 @@
             });
         });
 
-    }, false)</script><body><div id="main" class=""><div id="scene0" class="scene animated bounceInUp"><div id="s0t1" class="st"></div><div id="s0t2" class="st"></div></div><div id="scene1" class="scene animated bounceInUp"><div id="s1t1" class="s"></div><div id="s1t2" class="st animated bounceInDown"></div><div id="s1t3" class="st animated bounceIn"></div></div><div id="scene2" class="scene animated bounceInUp"><div id="s2t1" class="s"></div><div id="s2t2" class="st animated bounceInDown"></div><div id="s2t3" class="st animated bounceIn"></div><div id="s2t4" class="st animated flipInX"></div><div id="s2t5" class="st animated bounceInUp"></div></div><div id="scene3" class="scene animated bounceInUp"><div id="s3t1" class="s"></div><div id="s3t2" class="st animated bounceInDown"></div><div id="s3t3" class="st animated bounceIn"></div><div id="s3t4" class="st animated flipInX"></div></div><div id="scene4" class="scene animated bounceInUp"><div id="s4t1" class="s"></div><div id="s4t2" class="st animated bounceInDown"></div><div id="s4t3" class="st animated flipInX"></div></div><div id="scene5" class="scene animated bounceInUp"><div id="s5t1" class="s"></div><div id="s5t2" class="st animated bounceInDown"></div><div id="s5t3" class="st animated bounceIn"></div><div id="s5t4" class="st animated flipInX"></div></div><div id="scene6" class="scene animated bounceInUp"><div id="s6t1" class="s"></div><div id="s6t2" class="st animated bounceInDown"></div><div id="s6t3" class="st animated bounceIn"></div><div id="s6t4" class="st animated flipInX"><img id="ercode" src="res/code.jpg"></div><!-- <div id='s6t5' class="st animated flipInX"></div> --></div></div><audio id="bg-music" src="res/bgm.m4a" loop preload></audio><script src="lib/jquery-3.1.1.min.js"></script><script src="js/index.js"></script></body></html>
+    }, false)</script><body><div id="main" class=""><div id="scene0" class="scene animated bounceInUp"><div id="s0t1" class="st"></div><div id="s0t2" class="st"></div></div><div id="scene1" class="scene animated bounceInUp"><div id="s1t1" class="s"></div><div id="s1t2" class="st animated bounceInDown"></div><div id="s1t3" class="st animated bounceIn"></div></div><div id="scene2" class="scene animated bounceInUp"><div id="s2t1" class="s"></div><div id="s2t2" class="st animated bounceInDown"></div><div id="s2t3" class="st animated bounceIn"></div><div id="s2t4" class="st animated flipInX"></div><div id="s2t5" class="st animated bounceInUp"></div></div><div id="scene3" class="scene animated bounceInUp"><div id="s3t1" class="s"></div><div id="s3t2" class="st animated bounceInDown"></div><div id="s3t3" class="st animated bounceIn"></div><div id="s3t4" class="st animated flipInX"></div></div><div id="scene4" class="scene animated bounceInUp"><div id="s4t1" class="s"></div><div id="s4t2" class="st animated bounceInDown"></div><div id="s4t3" class="st animated flipInX"></div></div><div id="scene5" class="scene animated bounceInUp"><div id="s5t1" class="s"></div><div id="s5t2" class="st animated bounceInDown"></div><div id="s5t3" class="st animated bounceIn"></div><div id="s5t4" class="st animated flipInX"></div></div><div id="scene6" class="scene animated bounceInUp"><div id="s6t1" class="s"></div><div id="s6t2" class="st animated bounceInDown"></div><div id="s6t3" class="st animated bounceIn"></div><div id="s6t4" class="st animated flipInX"></div><img id="ercode" class="animated flipInX" src="res/code.jpg"><!-- <div id='s6t5' class="st animated flipInX"></div> --></div></div><div id="audio_btn" class="off rotate"></div><audio id="bg-music" src="res/bgm.m4a" loop preload></audio><script src="lib/jquery-3.1.1.min.js"></script><script src="js/index.js"></script></body></html>
